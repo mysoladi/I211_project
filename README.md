@@ -1,2 +1,2 @@
-# I211_lecture
+# I211_project
 This is a workspace for class infrastructure
