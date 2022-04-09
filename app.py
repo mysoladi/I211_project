@@ -25,11 +25,9 @@ def index():
 
 
 @app.route('/classes/')
-@app.route('/classes/class')
+@app.route('/classes/<class_id>')
 def classes(class_id = None):
     classes = get_class()
-    if class_id:
-        class_id = int(class_id)
     return render_template('classes.html', classes =classes, class_id=class_id)
 
 
@@ -66,6 +64,9 @@ def add_class():
         yoga1.append(newyoga)
      
 
+
+
+        
         set_class(yoga1)
 
 
