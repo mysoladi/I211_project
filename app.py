@@ -4,9 +4,11 @@ import csv
 
 app = Flask(__name__)
 
+#key for the csv and headers
 YOGA_PATH = app.root_path + '/yoga.csv'
 YOGA_KEY = ['classname', 'type', 'level', 'date', 'duration', 'trainer', 'description']
 
+# function to read in the csv file
 def get_class():
     try:
         with open(YOGA_PATH, 'r', encoding = 'utf-8-sig' ) as csvfile:
@@ -17,13 +19,13 @@ def get_class():
     return yogalist
 
 
-
+# route to my normal home index page
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
+# creates the name link on my classes page 
 @app.route('/classes/')
 @app.route('/classes/<class_id>')
 def classes(class_id = None):
@@ -31,7 +33,7 @@ def classes(class_id = None):
     return render_template('classes.html', classes =classes, class_id=class_id)
 
 
-
+# writes in data to my csv file
 
 def set_class(yoga1):
     try:
@@ -44,7 +46,7 @@ def set_class(yoga1):
     except Exception as err:
         print(err)
 
-
+# request the form and iterates through to post my data to my classes page
 
 @app.route('/classes/create', methods =['GET', 'POST'])
 def add_class():
@@ -66,7 +68,7 @@ def add_class():
 
 
 
-        
+        # setting the class to iterate through each dictionary and find each piece of data
         set_class(yoga1)
 
 

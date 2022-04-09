@@ -34,6 +34,7 @@
                         <li class="nav item">
                             <a class="nav-link active " aria-current="page" href="{{url_for('index')}}">Home</a>
                         </li>
+                        <!-- links inside my nav bar -->
                         <li class="nav item">
                             <a class="nav-link " href="{{url_for('classes')}}">Classes</a>
                         </li>
@@ -46,7 +47,7 @@
             </div>
         </nav>
     </header>
-
+<!-- block content postion -->
     <main class="flex-shrink-0">
         <div class="">
             {% block content %}
@@ -66,6 +67,7 @@
 
 
 </body>
+<!-- footer for each page -->
 <footer class="footer mt-auto py-3 bg-light">
     <div id="page-container">
         <div id = "content-wrap">
