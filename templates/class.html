@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Elite Yoga!{% endblock %}
+{% block content%}
+
+<div class="container">
+    
+    <h1>{{yoga_class['name']}}</h1>
+    <div class="row">
+
+        <table class="table">
+            <tr>
+                <td>Date:</td>
+                <td>{{ yoga_class['date'] }}</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>{{ yoga_class['date'] }}</td>
+            </tr>
+            <tr>
+                <td>Duration:</td>
+                <td>{{ yoga_class['duration'] }}</td>
+            </tr>
+            <tr>
+                <td>Yoga Type:</td>
+                <td>{{ yoga_class['type'] }}</td>
+            </tr>
+            <tr>
+                <td>Yoga Level:</td>
+                <td>{{ yoga_class['level'] }}</td>
+            </tr>
+            <tr>
+                <td>Trainer:</td>
+                <td>{{ yoga_class['trainer'] }}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>{{ yoga_class['description'] }}</td>
+            </tr>
+
+            
+            <button type="reset" value="edit " class="btn btn-primary"> Reset </button>
+            <button type='Delete' value="delete" class="btn btn-outline-secondary"> Delete </button>
+            <br></br>
+
+
+        </table>
+
+       
+
+        {% endblock %}
