@@ -11,5 +11,3 @@ This is a workspace for class infrastructure
                         <li class="nav item">
                             <a class="nav-link " href="{{url_for('dino_quiz')}}">remove class</a>
                         </li> -->
-
-<!-- <a href="{{url_for('yoga_classes', class_id=classes.index(yoga_class))}}">  -->
