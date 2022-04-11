@@ -1,20 +1,80 @@
 {% extends "base.html" %}
-{% block title %}Elite Yoga!{% endblock %}
+{% block title %}Good Vibes Yoga!{% endblock %}
 
 {% block content%}
+{% if class_id %}
+    {% set class_date = yoga_class['date'] %}
+    {% set class_date = yoga_class['classname'] %}
+    {% set class_date = yoga_class['duration'] %}
+    {% set class_date = yoga_class['type'] %}
+    {% set class_date = yoga_class['level'] %}
+    {% set class_date = yoga_class['trainer'] %}
+    {% set class_date = yoga_class['description'] %}
+{% else %}
+    {% set class_date = '' %}
+    {% set class_name = '' %}
+    {% set class_duration = '' %}
+    {% set class_type = '' %}
+    {% set class_level = '' %}
+    {% set class_trainer = '' %}
+    {% set class_description = '' %}
+{% endif %}
 
-<h1>Add a Class!</h1>
 
-<form action="{{url_for('addclass')}}" method="POST" name="addclass">
+<div class="row">
+    <div class="container-fluid align-items-center">
+        <h1>Add a Class!</h1>
+        <form action="{{url_for('add_class')}}" method="POST" name="add_class">
+      
 
-    <div class="mb-3">
-        <legend>Date: </legend>
-        <input class="form control" type="text" id="extinct" name="extinct">
-        <label class="form-label" for="extinct">Date: </label>
+            <div class="mb-3">
+                <legend>name </legend>
+                <input class="form control" type="text" id="classname" name="classname">
+                <label class="form-label" for="classname"> </label>
+            </div>
+            <div class="mb-3">
+                <legend>type </legend>
+                <input class="form control" type="text" id="type" name="type">
+                <label class="form-label" for="type"></label>
+            </div>
+            <div class="mb-3">
+                <legend>Date </legend>
+                <input class="form control" type="text" id="date" name="date">
+                <label class="form-label" for="date"> </label>
+            </div>
+            <div class="mb-3">
+                <legend>Duration </legend>
+                <input class="form control" type="text" id="duration" name="duration">
+                <label class="form-label" for="duration"> </label>
+            </div>
+
+            <fieldset>
+                <legend>What is the difficulty of this class? </legend>
+                <select class="form-select" aria-label="Default select example" name = "level">
+                    <option selected>Select the difficulty</option>
+                        <option value="level">Beginner </option>
+                            <option value="level">Intermediate</option>
+                                <option value="level">Advanced</option>
+                                    </select>
+            </fieldset>
+
+            <div class="mb-3">
+                <legend>trainer </legend>
+                <input class="form control" type="text" id="trainer" name="trainer">
+                <label class="form-label" for="trainer"> </label>
+            </div>
+            <div class="mb-12">
+                <legend>description </legend>
+                <input class="form control" type="text" id="description" name="description">
+                <label class="form-label" for="type"> </label>
+            </div>
+            <br></br>
+
+            <button type="submit" value="Save " class="btn btn-primary"> Save</button>
+            <button type='reset' value="Reset" class="btn btn-outline-secondary"> Reset </button>
+            <br></br>
     </div>
-
-    <button type='submit' value="submit"> submit </button>
-    <button type='reset' value="Reset"> Reset </button>
+</div>
 </form>
 
 {% endblock %}

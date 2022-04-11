@@ -2,9 +2,9 @@
 {% block title %}Elite Yoga!{% endblock %}
 
 {% block content%}
-
-<h1>Elite Yoga!</h1>
-
+<!-- creates header -->
+<h1>Good Vibes Yoga!</h1>
+<!-- creates my container for my links on the home page. includes images.-->
 <div class="b-example-divider"></div>
 
 <div class="container col-xxl-8 px-4 py-5">
@@ -14,11 +14,11 @@
                 height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Elite Yoga!</h1>
-            <p class="lead">Here at Elite Yoga we over a wide variety of yoga classes where you can set the date, attend, and see you current classes. To get started press the link press the link below! </p>
+            <h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Good Vibes Yoga!</h1>
+            <p class="lead">Here at Good Vibes Yoga we over a wide variety of yoga classes where you can set the date, attend, and see you current classes. To get started press the link press the link below! </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Classes</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Add A Class</button>
+                <a href="{{url_for('classes')}}" class="btn btn-primary btn-lg px-4 me-md-2">Classes</a>
+                <a href="{{url_for('add_class')}}" class="btn btn-outline-secondary btn-lg px-4">Add A Class</a>
             </div>
         </div>
     </div>
